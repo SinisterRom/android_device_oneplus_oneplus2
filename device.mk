@@ -143,8 +143,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fs_config_files
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.du.updater=oneplus2
+#PRODUCT_PROPERTY_OVERRIDES += \
+   # ro.du.updater=oneplus2
 
 # GPS
 PRODUCT_PACKAGES += \
