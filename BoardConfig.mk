@@ -170,6 +170,9 @@ TARGET_PROVIDES_KEYMASTER := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# RIL
+ TARGET_RIL_VARIANT := caf
+
 #Enable peripheral manager
 TARGET_PER_MGR_ENABLED := true
 
