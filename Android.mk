@@ -25,7 +25,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),oneplus2)
+ifeq (screwd_oneplus2,$(TARGET_PRODUCT))
 
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
