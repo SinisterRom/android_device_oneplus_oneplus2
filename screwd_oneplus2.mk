@@ -19,10 +19,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from oneplus2 device
 $(call inherit-product, device/oneplus/oneplus2/device.mk)
 
-# Inherit some common du stuff.
-$(call inherit-product, vendor/du/config/common_full_phone.mk)
+# Include Screw'd common configuration
+include vendor/screwd/main.mk
 
-PRODUCT_NAME := du_oneplus2
+PRODUCT_NAME := screwd_oneplus2
 PRODUCT_DEVICE := oneplus2
 PRODUCT_MANUFACTURER := OnePlus
 PRODUCT_BRAND := OnePlus
@@ -40,3 +40,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_SYSTEM_PROPERTY_BLACKLIST += ro.product.model
 
 TARGET_VENDOR := oneplus
+
+# Inline kernel building
+TARGET_GCC_VERSION_ARM64 := 4.9
+TARGET_KERNEL_SOURCE := kernel/oneplus/msm8994
+TARGET_KERNEL_CONFIG := du_oneplus2_defconfig
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.screwd.device.short=$(SCREWD_DEVICE_SHORT) \
+
